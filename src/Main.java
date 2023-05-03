@@ -11,18 +11,25 @@ public class Main {
         for (; ; ) {
             Scanner in = new Scanner(System.in);
             System.out.println("Input email: ");
-            String input = in.next();
+            String input = in.nextLine();
 
-            String regex = "[a-z0-9\\.\\-\\_]+[@][a-z]+[\\.][a-z]{2,3}";
-            boolean equals = input.matches(regex);
-            if (equals == true) {
-                storageEmails.add(input);
+
+            for (String substring : input.split("\\s+")) {
+
+                if (substring.equals("ADD")) {
+                    continue;
+                }
+                String regex = "[a-z0-9\\.\\-\\_]+[@][a-z]+[\\.][a-z]{2,3}";
+                boolean equals = substring.matches(regex);
+                if (equals == true) {
+                    storageEmails.add(substring);
+                }
             }
-
             if (input.equals("LIST")) {
-                for (String substring : storageEmails) {
-                    System.out.println(substring);
-                } break;
+                for (String currentEmail : storageEmails) {
+                    System.out.println("Current Email: " + currentEmail);
+                }
+                break;
             }
         }
     }

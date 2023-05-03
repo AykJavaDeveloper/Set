@@ -1,15 +1,17 @@
+import java.util.Scanner;
+
 public class Prova {
     public static void main(String[] args) {
-        String ploot = "One Two Three";
-        String plootMin = "";
+        Scanner in = new Scanner(System.in);
+        System.out.println("Input string: ");
+        String input = in.nextLine();
 
-        for (String substring : ploot.split("\s")) {
+        for (String substring : input.split("\\s+")) {
             if (substring.equals("One")) {
                 continue;
             }
 
-            plootMin = plootMin + substring + "\n";
+            System.out.println(substring);
         }
-        System.out.println(plootMin);
     }
 }
