@@ -1,11 +1,12 @@
 import java.util.HashSet;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
         //hello@skillbox.ru
         //mail@mail.ru
-        HashSet<String> storageEmails = new HashSet<>();
+        TreeSet<String> storageEmails = new TreeSet<>();
 
 
         for (; ; ) {
